@@ -1,0 +1,1393 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #616161;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 0;
+    z-index: 10;
+}
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo img{
+    width: 160px;
+}
+.menu-links{
+    margin-left: 70px;
+    flex: 1;
+    ul{
+        display: flex;
+        li{
+            position: relative;
+            list-style: none;
+            margin: 0 20px;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 500;
+            cursor: pointer;
+            &:hover{
+                color: #FFCE1C;
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+}
+.menu-links ul li::after{
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    width: 0%;
+    height: 1px;
+    background: #FFCE1C;
+    display: block;
+    margin: auto;
+    transition: 0.7s;
+}
+.menu-links ul li:hover::after{
+    width: 65%;
+}
+.social-icons ul{
+    display: flex;
+    margin-right: 35px;
+    li{
+        list-style: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        padding-left: 15px;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            transform: translateY(-10px);
+            color: #FFCE1C;
+        }
+    }
+}
+.logins{
+    a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+        margin: 0 25px;
+        &:hover{
+            color: #FFCE1C;
+        }
+    }
+    span{
+        color: #FFF;
+        font-size: 22px;
+        cursor: pointer;
+    }
+}
+.logins a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: #FFCE1C;
+    transition: 0.7s;
+    margin: auto;
+    display: block;
+}
+.logins a:hover::after{
+    width: 100%;
+}
+input[type = "checkbox"]{
+    display: none;
+}
+.bars{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    padding: 5px;
+    border-radius: 4px;
+    background: #f7b035;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    display: none;
+    transition: all 0.8s ease;
+    i{
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+    .container{
+        width: 100%;
+    }
+    nav{
+        position: absolute;
+        width: 180px;
+        height: 100vh;
+        right: -180px;
+        top: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 10px;
+        background: rgb(30, 182, 189);
+        transition: all 0.8s ease;
+    }
+    .logo img{
+        width: 130px;
+        padding-left: 30px;
+    }
+    .menu-links{
+        ul{
+            flex-direction: column;
+            li{
+                margin: 15px 0;
+                font-weight: 600;
+            }
+        }
+    }
+    .social-icons{
+        margin-bottom: 15px;
+    }
+    .bars{
+        display: block;
+        z-index: 5;
+    }
+    #btn:checked ~ .bars{
+        right: 160px;
+        transition: all 0.8s ease;
+    }
+    #btn:checked ~ .bars i::before {
+        content: "\f00d"; 
+    }
+    #btn:checked ~ .container nav{
+        right: 0;
+        transition: all 0.8s ease;
+    }
+}
+
+
+/* -------- Hero Section ----------- */
+.Hero-sect{
+    position: relative;
+    padding: 200px 0 100px;
+    background: #121619;
+    z-index: 1;
+}
+.Hero-sect::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(Images/chef-bg.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+.shape-outside{
+    position: absolute;
+    left: 4%;
+    top: 27%;
+    z-index: -1;
+    animation: animateX 3s ease-in-out infinite;
+}
+@keyframes animateX{
+    50%{
+        transform: translateX(-60px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    line-height: 100px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 100px;
+}
+.hero-content{
+    z-index: 2;
+    a{
+        display: inline-block;
+        text-decoration: none;
+        padding: 13px 30px;
+        color: #fff;
+        font-weight: 500;
+        text-transform: uppercase;
+        overflow: hidden;
+        background: #f7b035;
+        border-radius: 40px;
+        cursor: pointer;
+        margin-top: 20px;
+        &:hover{
+            color: #000;
+        }
+    }
+}
+.hero-img{
+    position: relative;
+    z-index: 1;
+}
+.scroll-01{
+    position: absolute;
+    top: 15%;
+    left: 38px;
+    z-index: -1;
+}
+.scroll-02{
+    position: absolute;
+    top: 48%;
+    left: -8px;
+    z-index: -1;
+}
+.shape01{
+    position: absolute;
+    right: -5%;
+    top: 1%;
+}
+.shape02{
+    position: absolute;
+    top: -9%;
+    left: 10%;
+    animation: Bounce 4s ease-in-out infinite;
+}
+.shape03{
+    position: absolute;
+    bottom: 0%;
+    left: -11%;
+}
+.shape04{
+    position: absolute;
+    bottom: -4%;
+    right: 5%;
+    animation: Bounce 4s ease-in-out infinite;
+}
+@keyframes Bounce{
+    0%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+    .Hero-sect{
+        padding: 80px 0 100px;
+    }
+    .row{
+        flex-direction: column;
+        align-items: center;
+    }
+    .title{
+        line-height: 60px;
+        font-weight: 500;
+        font-size: 46px;
+        text-align: center;
+        padding: 0 20px;
+    }
+    .shape-outside{
+        width: 100px;
+    }
+    .hero-content{
+        text-align: center;
+    }   
+    .hero-img{
+        width: 90%;
+        img{
+            width: 100%;
+        }
+    }
+    .heor-shape{
+        .scroll-01{
+            width: 140px;
+        }
+        .scroll-02{
+            width: 165px;
+            z-index: 5;
+        }
+        .shape01{
+            width: 100px;
+        }
+        .shape02{
+            width: 100px;
+        }
+        .shape03{
+            width: 100px;
+        }
+        .shape04{
+            width: 100px;
+        }
+    }
+    
+}
+
+/* ------- Cards Section ---------- */
+.cards{
+    padding: 100px 0;
+}
+.cards .container{
+    position: relative;
+}
+.promoshape{
+    position: absolute;
+    bottom: -94px;
+    right: -140px;
+    width: 300px;
+    animation: Bounce 4s ease-in-out infinite;
+}
+.card{
+    width: 48%;
+    img{
+        width: 100%;
+        border-radius: 15px;
+    }
+}
+.promo{
+    position: relative;
+}
+.promo-tex{
+    width: 45%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    h2{
+        font-size: 40px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #FFF;
+        text-transform: uppercase;
+    }
+    a{
+        display: inline-block;
+        text-decoration: none;
+        padding: 13px 30px;
+        color: #fff;
+        font-weight: 500;
+        text-transform: uppercase;
+        overflow: hidden;
+        background: #f7b035;
+        border-radius: 40px;
+        cursor: pointer;
+        margin-top: 20px;
+        &:hover{
+            color: #000;
+        }
+    }
+}
+@media (min-width: 300px) and (max-width: 600px){
+    .row .card{
+        width: 95%;
+        margin: 20px 0;
+    }
+    .promo-tex{
+        width: 50%;
+        right: 10px;
+        h2{
+            font-size: 22px;
+        }
+        a{
+            padding: 8px 20px;
+        }
+    }
+    .promoshape{
+        bottom: -74px;
+        right: 0px;
+    }
+}
+
+
+/* ---------- Best Pizza section -------- */
+.best-pizza{
+    padding: 100px 0;
+    background: #FFF8EF;
+    position: relative;
+}
+.shape1{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.shape2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.shape3{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.shape4{
+    position: absolute;
+    top: 9%;
+    right: 9%;
+}
+.shape5{
+    position: absolute;
+    bottom: 3%;
+    right: 30%;
+}
+.shape6{
+    position: absolute;
+    top: 25%;
+    left: 38%;
+}
+.shape7{
+    position: absolute;
+    top: 55%;
+    left: 35%;
+}
+.best-pizzimg{
+    position: relative;
+    width: 41%;
+    z-index: 1;
+    img{
+        width: 100%;
+    }
+}
+.tomato{
+    position: absolute;
+    left: 5%;
+    bottom: -30%;
+    z-index: -1;
+    animation: Bounce 4s ease-in-out infinite;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+.best-pizza-content{
+    width: 50%;
+    img{
+        position: relative;
+        left: 22%;
+        margin-bottom: 30px;
+    }
+}
+.best-pizza-content h2{
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 160px;
+    color: #f7b035;
+    line-height: 160px;
+    letter-spacing: -0.01em;
+    margin-bottom: 30px;
+    font-family: 'Delius Unicase', cursive;
+    span{
+        display: block;
+        color: #000;
+        font-size: 40%;
+        font-weight: 500;
+        line-height: 0.85em;
+        letter-spacing: 0em;
+    }
+    .text-end{
+        text-align: right;
+    }
+}
+@media (min-width: 300px) and (max-width: 600px){
+    .best-pizzimg{
+        width: 90%;
+    }
+    .best-pizza-content{
+        width: 80%;
+        margin-top: 90px;
+    }
+    .best-pizza-content h2{
+        font-size: 80px;
+        line-height: 100px;
+        margin-bottom: 10px;
+        span{
+            font-size: 30%;
+            font-weight: 500;
+        }
+        .text-end{
+            text-align: center;
+        }
+    }
+}
+
+
+/* -------- Fresh Quality Section --------- */
+.FreshQuality{
+    padding: 100px 0;
+    .row{
+        svg path{
+            fill: #f7b035;
+        }
+    }
+}
+.freshContent{
+    text-align: center;
+    margin-bottom: 50px;
+    h3{
+        font-size: 24px;
+        color: #f7b035;
+        text-transform: uppercase;
+        font-family: 'Delius Unicase', cursive;
+        margin-bottom: 15px;
+    }
+    h2{
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 56px;
+        color: #000;
+        margin-bottom: 15px;
+    }
+}
+.Pizzacard{
+    position: relative;
+    width: 22%;
+    padding: 25px;
+    background: #fff;
+    text-align: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    h3{
+        line-height: 1.2;
+        margin-bottom: 15px;
+        a{
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            &:hover{
+                color: #f7b035;
+            }
+        }
+    }
+    p{
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+}
+.Pizzacard:hover{
+    background: #fffbf1;
+    box-shadow: 0 10px 20px 0 rgb(0, 0, 0, 0.1);
+    border: 1px solid #fffbf1;
+}
+.card-img{
+    margin-bottom: 25px;
+}
+.btn{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    visibility: visible;
+    opacity: 0;
+    transition: all 0.5s ease;
+    a{
+        text-decoration: none;
+        padding: 13px 30px;
+        color: #fff;
+        font-weight: 500;
+        text-transform: uppercase;
+        overflow: hidden;
+        background: #f7b035;
+        border-radius: 40px;
+    }
+}
+.Pizzacard:hover .btn{
+    transform: translate(-50%, 30%);
+    opacity: 1;
+}
+@media (min-width: 300px) and (max-width: 600px){
+    .FreshQuality{
+        padding: 50px 0;
+    }
+    .freshContent{
+        h3{
+            font-size: 18px;
+        }
+        h2{
+            font-size: 38px;
+            line-height: 50px;
+        }
+    }
+    FreshQuality .row{
+        flex-direction: column;
+    }
+    .Pizzacard{
+        width: 70%;
+    }
+}
+
+/* -------- PizzaMenu Section ---------*/
+.PizzaMenu{
+    padding: 100px 0;
+    background: url(Images/food_menu_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+.PizzaMenu::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to left top, rgba(2, 11, 25, 0.19), rgba(2, 6, 13, 0.58), 
+                            rgba(2, 6, 16, 0.57), rgba(3, 6, 28, 0.49), rgba(0, 0, 10, 0.4));
+    z-index: -1;
+}
+.PizzaMenu .container {
+    width: 1280px;
+}
+
+.menu-pizza{
+    width: 455px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.Menushape1{
+    position: absolute;
+    left: 12%;
+    top: 5%;
+}
+.Menushape2{
+    position: absolute;
+    right: 12%;
+    top: 5%;
+}
+.Menushape3{
+    position: absolute;
+    right: 52%;
+    bottom: 4%;
+}
+.Menushape4{
+    position: absolute;
+    right: 28%;
+    bottom: 30%;
+}
+.Menushape5{
+    position: absolute;
+    left: 0%;
+    bottom: 35%;
+}
+.MenuCard{
+    width: 33%;
+    position: relative;
+    padding: 30px;
+    border: 2px solid #f7b035;
+    border-radius: 25px;
+    margin-top: 10%;
+}
+
+.Menu-tag{
+    background: #f7b035;
+    font-size: 32px;
+    padding: 8px 30px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Delius Unicase', cursive;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.MenuTitles{
+    margin-top: 50px;
+    div{
+        margin-bottom: 15px;
+        p{
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: 'Delius Unicase', cursive;
+            cursor: pointer;
+            span{
+                position: relative;
+                top: -6px;
+                margin-right: 5px;
+            }
+            &:hover{
+                color: #f7b035;
+            }
+        }
+    }
+    .desc{
+        color: #d7d7d7;
+        font-size: 14px;
+    }
+}
+.mid-menu-title{
+    width: 32%;
+    text-align: center;
+    align-self: flex-end;
+    h3{
+        color: #fff;
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: 'Delius Unicase', cursive;
+    }
+    h2{
+        color: #fff;
+        font-size: 80px;
+        text-transform: uppercase;
+        font-weight: 400;
+        line-height: 75px;
+        font-family: 'Delius Unicase', cursive;
+        margin-top: 12px;
+        span{
+            display: block;
+            color: #f7b035;
+            font-size: 102px;
+            font-weight: 700;
+            line-height: 100px;
+        }
+    }
+    p{
+        color: #d7d7d7;
+        line-height: 25px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+}
+@media (min-width: 300px) and (max-width: 600px){
+    .PizzaMenu .container {
+        width: 100%;
+    }
+    .PizzaMenu .menu-pizza{
+        width: 270px;
+        img{
+            width: 100%;
+        }
+    }
+    .MenuCard{
+        width: 80%;
+        padding: 20px;
+    }
+    .Menu-tag{
+        font-size: 22px;
+        padding: 6px 20px;
+    }
+    .MenuTitles{
+        div{
+            margin-bottom: 15px;
+            p{
+                font-size: 14px;
+                span{
+                    margin-right: 25px;
+                } 
+            }
+        }
+        .desc{
+            font-size: 12px;
+        }
+    }
+    .mid-menu-title{
+        width: 100%;
+        h3{
+            color: #fff;
+            font-size: 20px;
+        }
+        h2{
+            font-size: 30px;
+            line-height: 30px;
+            margin-top: 2px;
+            span{
+                font-size: 40px;
+                line-height: 40px;
+            }
+        }
+        p{
+            padding: 0 10px;
+            line-height: 22px;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+    }
+}
+
+/* --------- FUn Section ------- */
+.FunSec{
+    padding: 100px 0 200px;
+}
+.FunTop{
+    text-align: center;
+    h2{
+        color: #000;
+        font-weight: 700;
+        font-size: 44px;
+        font-family: 'Rubik', sans-serif;
+        line-height: 56px;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+    }
+    h3{
+        display: inline-block;
+        position: relative;
+        color: #fff;
+        padding: 8px 65px;
+        z-index: 1;
+        font-family: 'Delius Unicase', cursive;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 33px;
+        z-index: 1;
+        svg{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            path{
+                fill: #f7b035;
+            }
+        }
+    }
+}
+.FunBottom{
+    padding-top: 50px;
+    position: relative;
+    .container{
+        position: relative;
+    }
+}
+.double_fun_pizza{
+    position: absolute;
+    left: 50%;
+    top: -5%;
+    transform: translateX(-50%);
+    img{
+        width: 100%;
+    }
+}
+.funbg img{
+    margin: auto;
+    display: block;
+}
+.funshape1{
+    position: absolute;
+    right: 20%;
+    z-index: 1;
+}
+.funshape2{
+    position: absolute;
+    left: 20%;
+    top: -24%;
+    animation: Bounce 4s ease-in-out infinite;
+}
+.funshape3{
+    position: absolute;
+    top: 5%;
+}
+.funshape4{
+    position: absolute;
+    top: 55%;
+    left: -2%;
+    animation: Bounce 4s ease-in-out infinite;
+}
+.funshape5{
+    position: absolute;
+    top: 28%;
+    right: -5%;
+}
+.funshape6{
+    position: absolute;
+    bottom: 10%;
+    right: -2%;
+    animation: Bounce 4s ease-in-out infinite;
+}
+.Funpromo{
+    position: absolute;
+    width: 300px;
+    top: -35%;
+    right: 100px;
+    animation: Bounce 4s ease-in-out infinite;
+    img{
+        width: 100%;
+    }
+}
+@media (min-width: 300px) and (max-width: 600px){
+    .FunSec{
+        padding: 80px 0 280px;
+    }
+    .FunTop{
+        h2{
+            font-weight: 700;
+            font-size: 34px;
+            line-height: 40px;
+            margin-bottom: 20px;
+        }
+        h3{
+            padding: 8px 35px;
+            font-size: 20px;
+        }
+    }
+    .FunBottom .Funpromo{
+        width: 160px;
+        top: -40%;
+        right: -10px;
+    }
+    .double_fun_pizza{
+        width: 100%;
+    }
+    .funbg img{
+        width: 100%;
+    }
+    .container .funshape1{
+        width: 40%;
+        position: absolute;
+        right: 2%;
+        z-index: 1;
+    }
+}
+
+
+/* --------- Delivery Section ------------- */
+.delivery-tag{
+    color: #f7b035;
+    font-family: 'Delius Unicase', cursive;
+}
+.delivery h2{
+    color: #000;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: capitalize;
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 15px;
+}
+.delivery{
+    img{
+        left: 0%;
+    }
+}
+.deliverbike{
+    width: 42%;
+    margin-right: 50px;
+}
+.deliverbike img{
+    width: 100%;
+    height: auto;
+}
+.deliverybottom{
+    display: flex;
+    align-items: center;
+    a{
+        display: inline-block;
+        text-decoration: none;
+        padding: 13px 30px;
+        color: #fff;
+        font-weight: 500;
+        text-transform: uppercase;
+        overflow: hidden;
+        background: #f7b035;
+        border-radius: 40px;
+        cursor: pointer;
+        &:hover{
+            color: #000;
+        }
+    }
+}
+.icontitle{
+    width: 60px;
+    margin-top: 35px;
+    margin-right: 15px;
+    img{
+        width: 100%;
+    }
+}
+.order{
+    margin-right: 40px;
+    p{
+        text-transform: capitalize;
+        color: #000;
+        font-weight: 700;
+    }
+    span{
+        color: #f7b035;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+}
+@media (min-width: 300px) and (max-width: 600px){
+    .deliverbike{
+        width: 90%;
+        margin-right: 50px;
+    }
+    .delivery h2{
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 1.1;
+        margin-bottom: 2px;
+    }
+    .deliverybottom{
+        justify-content: center;
+        flex-wrap: wrap;
+        a{
+            padding: 10px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            z-index: 5;
+        }
+    }
+    .deliverybottom .order{
+        margin-right: 20px;
+        z-index: 5;
+    }
+}
+
+/* ---------- Trends Section --------- */
+.Trends{
+    padding: 120px 0;
+}
+.Trends .container{
+    width: 1350px;
+}
+.Trend-boxes{
+    display: flex;
+    justify-content: space-between;
+}
+.Trend-box{
+    width: 32%;
+}
+.Trend-img{
+    border-radius: 20px;
+    position: relative;
+    a{
+        font-size: 15px;
+    }
+}
+.Trend-img img{
+    width: 100%;
+    border-radius: 40px;
+    transform: scale(1);
+    transition: all 0.4s ease 0s;
+}
+.Trend-box:hover .Trend-img img{
+    transform: scale(1.05);
+}
+.img-tag{
+    height: 90px;
+    width: 14%;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    font-size: 22px;
+    padding: 25px 6px;
+    font-weight: 700;
+    font-family: 'Delius Unicase', cursive;
+    background: #f7b035;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 0 0 50px 50px;
+}
+.Trend-content{
+    margin-top: 30px;
+    padding: 15px 0;
+    h2{
+        color: #000;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 42px;
+        cursor: pointer;
+        &:hover{
+            color: #f7b035;
+        }
+    }
+}
+.tag{
+    margin-bottom: 15px;
+    i{
+        color: #f7b035;
+        font-size: 18px;
+        margin-right: 6px;
+    }
+    span{
+        color: #616161;
+    }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+    .Trends .container{
+        width: 100%;
+    }
+    .Trend-boxes{
+        flex-direction: column;
+        align-items: center;
+    }
+    .Trend-box{
+        width: 92%;
+        margin-bottom: 40px;
+    }
+    .Trend-content{
+        margin-top: 2px;
+        padding: 5px 0;
+        h2{
+            font-size: 22px;
+            margin-bottom: 8px;
+            line-height: 30px;
+        }
+        p{
+            font-size: 14px;
+            line-height: 1.8;
+        }
+    }
+    .tag{
+        margin-bottom: 3px;
+    }
+}
+
+/* ------- NewsLetter Section ---------- */
+section{
+    padding: 100px 0;
+}
+.Newsletter{
+    background: #f7b035;
+    position: relative;
+}
+.subscribe-in{
+    width: 100%;
+    z-index: 1;
+}
+.top-Heading{
+    text-align: center;
+    margin-bottom: 35px;
+}
+.subtitle{
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    font-family: 'Delius Unicase', cursive;
+    color: #fff;
+}
+.section-title{
+    font-weight: 700;
+    font-size: 44px;
+    font-family: 'Rubik', sans-serif;
+    line-height: 56px;
+    color: #FFF;
+}
+.subscribe-box{
+    z-index: 1;
+    width: 55%;
+    margin: 30px auto 0;
+}
+.subscribe-box form{
+    position: relative;
+    background: #FFF;
+    height: 60px;
+    border-radius: 40px;
+    input{
+        position: absolute;
+        padding: 5px 30px;
+        width: 100%;
+        border: none;
+        outline: none;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 40px;
+        background: transparent;
+    }
+    button{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        height: 75%;
+        width: 20%;
+        background: #f7b035;
+        padding: 5px 20px;
+        border-radius: 40px;
+        border: none;
+        color: #FFF;
+        letter-spacing: 1px;
+        font-weight: 600;
+        font-family: 'Rubik', sans-serif;
+        cursor: pointer;
+    }
+}
+@media (min-width: 300px) and (max-width: 600px){
+    .section-title{
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .subscribe-box{
+        width: 98%;
+    }
+    .subscribe-box form{
+        button{
+            height: 65%;
+            font-size: 13px;
+            width: 30%;
+            padding: 5px 16px;
+        }
+    }
+}
+/* -------- Footer Section --------- */
+.footer-widget{
+    padding: 40px 0;
+    text-align: center;
+}
+.footer-links{
+    width: 25%;
+    border-right: 0.5px solid #eaeaea;
+    h2{
+        font-size: 32px;
+        color: #000;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: 'Rubik', sans-serif;
+    }
+}
+.footer-links div{
+    margin-top: 40px;
+    a{
+        display: block;
+        text-decoration: none;
+        color: #616161;
+        cursor: pointer;
+        &:hover{
+            color: #f7b035;
+        }
+    }
+}
+.footer-mid{
+    width: 50%;
+    padding: 40px 0;
+}
+.logo-footer{
+    margin-bottom: 30px;
+}
+.addres-desc{
+    text-align: center;
+    p{
+    margin-bottom: 2px;
+    font-size: 15px;
+    font-family: 'Rubik', sans-serif;
+        span{
+            margin-left: 5px;
+            color: #000;
+        }
+    }
+}
+.footer-socialicons{
+    text-align: center;
+}
+.iconsrow{
+    margin-top: 20px;
+    li{
+        display: inline-block;
+        margin: 0 2px;
+        a{
+            display: block;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #eee;
+            border-radius: 50%;
+            line-height: 50px;
+            text-align: center;
+            color: #616161;
+            font-size: 18px;
+            &:hover{
+                border: 2px solid #f7b035;
+                color: #fff;
+                background: #f7b035;
+            }
+        }
+    }
+}
+.Opening-Hourse{
+    width: 25%;
+    border-left: 0.5px solid #eaeaea;
+}
+.Hours-sec{
+    h2{
+        font-size: 32px;
+        color: #000;
+        font-weight: 700;
+        margin-bottom: 40px;
+        font-family: 'Rubik', sans-serif;
+    }
+}
+.footer-bottom{
+    background: rgba(0, 0, 0, 0.05);;
+    text-align: center;
+    padding: 20px 0;
+    p{
+        font-size: 15px;
+        color: #999;
+    }
+}
+@media (min-width: 300px) and (max-width: 600px){
+    .footer-links{
+        height: 230px;
+        width: 100%;
+        border-right: none;
+        h2{
+            margin-bottom: 10px;
+        }
+    }
+    .footer-links div{
+        margin-top: 30px;
+    }
+    .footer-mid{
+        width: 100%;
+    }
+    .logo-footer{
+        margin-bottom: 10px;
+    }
+    .Opening-Hourse{
+        width: 100%;
+        border-left: none;
+    }
+}
