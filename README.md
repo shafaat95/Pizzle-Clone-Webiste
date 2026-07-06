@@ -1,6 +1,5 @@
 # Pizzle-Clone-Webiste
-# Pizzle clone site is mobile responsive using HTML &amp; CSS only
-# I use custom animation on this website as well
+Pizzle clone site is mobile responsive using HTML &amp; CSS only
+I use custom animation on this website as well
 
-## 📸 Project Preview
-![Pizzle Clone Screenshot](images/home.png)
+## 📸 Project Preview![Pizzle Clone Screenshot](Images/Home.png)
